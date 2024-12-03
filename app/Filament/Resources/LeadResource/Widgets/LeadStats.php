@@ -15,8 +15,8 @@ class LeadStats extends BaseWidget
     {
         return [
             Stat::make('Open Leads', Lead::where('status', 1)->count()),
-            Stat::make('Qualified leads', Lead::where('status', 2)->count()),
-            Stat::make('Disqualified leads', Lead::where('status', 3)->count()),
+            Stat::make('Qualified leads', Lead::where('status', 3)->count()),
+            Stat::make('Disqualified leads', Lead::where('status', 4)->count()),
             Stat::make('Avg Estimated Revenue', 
                     Money::USD(
                         Lead::whereIn('status', [2, 3])
