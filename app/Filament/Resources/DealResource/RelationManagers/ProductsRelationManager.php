@@ -59,7 +59,8 @@ class ProductsRelationManager extends RelationManager
                     ->mask(RawJs::make('$money($input)'))
                     ->stripCharacters(',')
                     ->numeric()
-                    ->disabled()
+                     ->readOnly() //using readOnly() instead of disabled()
+                //    ->disabled() Gives error here as there is no default value for 'total_amount'
                     ->default(0)
             ]);
     }
